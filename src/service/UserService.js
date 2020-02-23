@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const USER_API_BASE_URL = 'http://localhost:8080/api/auth/';
+const USER_API_BASE_URL = 'https://sheila-task-scheduler.herokuapp.com/api/auth/';
 
 class UserService {
 

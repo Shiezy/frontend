@@ -58,10 +58,6 @@ class ListTaskComponent extends Component {
     }
 
     render() {
-        // var isLoading = this.state.tasks.length ===0;
-        // if(isLoading){
-        //     return <div>Data is loading</div>
-        // }
         return (
             <div className="col-sm-12" >
                 <Typography variant="h4" style={style}>Task Details</Typography>
@@ -76,8 +72,7 @@ class ListTaskComponent extends Component {
                             <TableCell> Customer FirstName</TableCell>
                             <TableCell> Customer Last Name</TableCell>
                             <TableCell> Customer Phone</TableCell>
-                            <TableCell> Age</TableCell>
-                            <TableCell>Actions</TableCell>
+                            {/*<TableCell> Age</TableCell>*/}
 
                         </TableRow>
                     </TableHead>
@@ -86,20 +81,16 @@ class ListTaskComponent extends Component {
                         {
                             // this.state.tasks?
                             this.state.tasks.map(
-                                task =>
-                                    <tr key={task.id}>
+                                task => (<TableRow key={task.id}>
                                         <TableCell>{task.id}</TableCell>
                                         <TableCell>{task.customerFirstName}</TableCell>
                                         <TableCell>{task.customerLastName}</TableCell>
                                         <TableCell>{task.customerPhone}</TableCell>
-                                        <TableCell>{task.age}</TableCell>
+                                        {/*<TableCell>{task.age}</TableCell>*/}
                                         <TableCell align="right" onClick={() => this.deleteTask(task.id)}><DeleteIcon /></TableCell>
                                         <TableCell align="right" onClick={() => this.editTask(task.id)}><CreateIcon /></TableCell>
 
-                                        <td>
-                                        </td>
-                                    </tr>
-                            )
+                                    </TableRow>))
                         }
 
                     </TableBody>

@@ -12,7 +12,7 @@ class App extends Component {
       return (
           <div className="container">
               <Router>
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                       <NavBar/>
                       <Switch>
                           <Route path="/" exact component={ListTaskComponent} />

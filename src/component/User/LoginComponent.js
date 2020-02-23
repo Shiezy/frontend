@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import UserService from "../../service/UserService";
 import Typography from '@material-ui/core/Typography';
 
+
+
 class LoginComponent extends Component{
 
     constructor(props){
@@ -19,18 +21,15 @@ class LoginComponent extends Component{
         UserService.login(user)
             .then(res => {
                 if (res.data.message) {
-                    // Here you should have logic to handle invalid creation of a user.
-                    // This assumes your Rails API will return a JSON object with a key of
-                    // 'message' if there is an error with creating the user, i.e. invalid username
-
                     console.log("Encountered Exception during Login ;", res.data.message);
                 } else {
                     localStorage.setItem("token", res.data.accessToken)
                     // dispatch(loginUser(data.user))
+
                 }
 
                 this.setState({message : res.message});
-                this.props.history.push('/users');
+                this.props.history.push('/');
             });
     }
 
@@ -39,7 +38,7 @@ class LoginComponent extends Component{
 
     render() {
         return(
-            <div>
+            <div className="col-md-6  offset-md-3">
                 <Typography variant="h4" style={style}>User Login</Typography>
                 <form>
                     <div className="form-group">
@@ -54,6 +53,7 @@ class LoginComponent extends Component{
 
                     <button className="btn btn-success" onClick={this.saveUser}>Login</button>
                 </form>
+
             </div>
         );
     }

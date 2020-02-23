@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const TASK_API_BASE_URL = 'http://localhost:8080/api/task/';
+const TASK_API_BASE_URL = 'https://sheila-task-scheduler.herokuapp.com/api/task/';
 const AuthStr = 'Bearer ' + localStorage.getItem("token");
 const headers =  {
     'Content-Type': 'application/json',

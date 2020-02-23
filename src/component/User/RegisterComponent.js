@@ -23,7 +23,7 @@ class RegisterComponent extends Component{
         UserService.addUser(user)
             .then(res => {
                 this.setState({message : res.message});
-                this.props.history.push('/users');
+                this.props.history.push('/login');
             });
     }
 
@@ -32,7 +32,7 @@ class RegisterComponent extends Component{
 
     render() {
         return(
-            <div>
+            <div className="col-md-6  offset-md-3">
 
                 <Typography variant="h4" style={style}>User Registration</Typography>
 
